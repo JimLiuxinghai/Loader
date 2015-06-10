@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>dot实验</title>
+	</head>
+	<body>
+		<div class="content"></div>
+		<script src="js/jquery-1.7.min.js"></script>
+		<script src="js/doT.js"></script>
+		<script type="text/x-dot-template" id="tpl">
+			{{ for(var prop in it) { }}
+			<div>KEY:{{= prop }}---VALUE:{{= it[prop] }}</div>
+			{{ } }}
+		</script>
+		<script>
+			var dataEval = {"name":"Jake","age":31,"interests":["basketball","hockey","photography"],"contact":{"email":"jake@xyz.com","phone":"999999999"}};
+			var evalText = doT.template($("#tpl").text());
+			$(".content").html(evalText(dataEval))
+		</script>
+	</body>
+</html>
