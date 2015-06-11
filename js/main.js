@@ -32,10 +32,13 @@ require.config(
     {
        
         path:{
-            "jquery":"jquery-1.7.min",
-            "util":"util"
+            "jquery":"js/jquery-1.8.3.min",
+            "util":"js/util"
         },
         shim : {
+        	"jquery": {
+            exports: "jquery"
+         	},
             "util" : {
                 deps : ["jquery"],
                 exports :"util"
